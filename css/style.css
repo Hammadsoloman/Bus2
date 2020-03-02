@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,400,500,700&display=swap');
+
+
+html{
+    height: 300px;
+
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    font-size: 19px;
+    line-height: 28px;
+    word-spacing: 1px;
+   
+
+}
+header.mheader {
+    background-color: #280ad1;
+    color: rgb(243, 231, 231);
+    padding: 25px 30px 50px;
+    position: sticky;
+    top: 0;
+}
+nav ul li {
+    display: inline-block;
+    font-size: 15px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px;
+}
+nav ul li a:hover{
+    color: cadetblue;
+}
+
+#logo{
+    float: left;
+}
+
+.mylist{
+    float: right;
+}
+
+.sizeImage{ 
+        display: inline;
+        font-size: 15px;
+    }
+
+ #all-Product{
+     height: 200px;
+ }
+ #leftimg{
+     float: left;
+ }
+ #rightimg{
+     float: right;
+ }
+
+ 
+ #barchart{
+    width: 40%;
+    position: absolute;
+    top: 22%;
+    right: 25%;
+  }
+ 
+  
+  footer{
+    background-color: #280ad1;
+    text-align: center;
+    margin-top: 50%;
+    height: 30px;
+    padding-top: 25px;
+  
+  }
+
+  .sizeImage{
+      width:30% ;
+      height:180px ;
+  }
