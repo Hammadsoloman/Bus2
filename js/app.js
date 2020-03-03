@@ -75,8 +75,8 @@ function clickImage(e){
 function setItem(){
   var totalViews = JSON.stringify(product);
   localStorage.setItem( 'product', totalViews);
-  // var updateArr=[];
-  // updateArr.push(product);
+  // update the value
+  
 }
 
 
