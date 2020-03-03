@@ -80,27 +80,26 @@ function setItem(){
 }
 
 
-function getItem(){
-  var totalViews = localStorage.getItem('product');
-  product = JSON.parse(totalViews);
-  randomEnd();
-}
+  var totalViews=JSON.parse(localStorage.getItem('Products'));
+  if(totalViews===null){
+    return;
+    var reAdd=['bag.jpg','banana.jpg','boots.jpg','breakfast.jpg',
+    'bubblegum.jpg','chair.jpg','cthulhu.jpg',
+    'dog-duck.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg',
+    'scissors.jpg','shark.jpg','tauntaun.jpg','unicorn.jpg','usb.gif','water-can.jpg','wine-glass.jpg'
+    ];
 
-// function setItemVotes(){
-//   for(var i =0;i<product.length;i++){
-//   var totalVotes = JSON.stringify('product');
-//   localStorage.setItem( 'product', totalVotes);
-//   }
-// }
+    reAdd.forEach(function(name)
+  }
 
-// //get all drinks
-// function getItemVotes(){
-//   for(var i=0;i<product.length;i++){
-//   var totalVotes = localStorage.getItem('product');
-//   product = JSON.parse(totalVotes);
+
+// function getItem(){
+//   var totalViews = localStorage.getItem('product');
+//   product = JSON.parse(totalViews);
 //   randomEnd();
-//   }
 // }
+
+
 //End the local storage
 groupImageSection.addEventListener('click' , clickImage);
 
