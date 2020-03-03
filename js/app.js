@@ -1,5 +1,7 @@
-var productImages=['bag.jpg','banana.jpg','boots.jpg','breakfast.jpg','bubblegum.jpg','chair.jpg','cthulhu.jpg',
-'dog-duck.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg','scissors.jpg','shark.jpg','tauntaun.jpg','unicorn.jpg','usb.gif','water-can.jpg','wine-glass.jpg'
+var productImages=['bag.jpg','banana.jpg','boots.jpg','breakfast.jpg',
+'bubblegum.jpg','chair.jpg','cthulhu.jpg',
+'dog-duck.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg',
+'scissors.jpg','shark.jpg','tauntaun.jpg','unicorn.jpg','usb.gif','water-can.jpg','wine-glass.jpg'
 ];
 var leftProductImage = document.querySelector('#leftimg');
 var rightProductImage = document.querySelector('#rightimg');
@@ -14,6 +16,7 @@ this.urlImg = `img/${this.name}`;
 this.totalViews = 0;
 this.totalVotes = 0 ;
 product.push(this);
+
 }
 
 function choiseRandomImage(){
@@ -50,7 +53,8 @@ function clickImage(e){
   for (var i = 0 ; i < product.length ; i++){
     if (product[i].name === e.target.alt){
       product[i].totalViews += 1;
-    }
+      setItem()
+    }  
   }
   if((e.target.id ==='leftimg')||(e.target.id ==='rightimg')||(e.target.id ==='centerimg')){
     choiseRandomImage();
@@ -58,15 +62,46 @@ function clickImage(e){
   }
   if(totalClicks ===25){
     groupImageSection.removeEventListener('click' , clickImage)
-    leftProductImage.remove()
-    rightProductImage.remove()
-    centerProductImage.remove()
-    randomEnd()
+    leftProductImage.remove();
+    rightProductImage.remove();
+    centerProductImage.remove();
+    randomEnd();
     alert('That was the last choise !')
-    renderChartResults()
+    renderChartResults();
   }
 }
 
+///added Local srorge after the event.
+function setItem(){
+  var totalViews = JSON.stringify(product);
+  localStorage.setItem( 'product', totalViews);
+  // var updateArr=[];
+  // updateArr.push(product);
+}
+
+
+function getItem(){
+  var totalViews = localStorage.getItem('product');
+  product = JSON.parse(totalViews);
+  randomEnd();
+}
+
+// function setItemVotes(){
+//   for(var i =0;i<product.length;i++){
+//   var totalVotes = JSON.stringify('product');
+//   localStorage.setItem( 'product', totalVotes);
+//   }
+// }
+
+// //get all drinks
+// function getItemVotes(){
+//   for(var i=0;i<product.length;i++){
+//   var totalVotes = localStorage.getItem('product');
+//   product = JSON.parse(totalVotes);
+//   randomEnd();
+//   }
+// }
+//End the local storage
 groupImageSection.addEventListener('click' , clickImage);
 
 function randomNumber(min, max) {
@@ -136,3 +171,4 @@ var myChart = new Chart(ctx, {
 }
 
 );}
+getItem();
