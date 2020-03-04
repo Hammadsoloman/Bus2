@@ -79,11 +79,10 @@ function clickImage(e){
   }
 }
 
-///added Local srorge after the event.
+///added Local srorge for the array object.
 function setItem(){
   var totalViews = JSON.stringify(product);
   localStorage.setItem( 'product', totalViews);
-  // update the value
   
 }
 
