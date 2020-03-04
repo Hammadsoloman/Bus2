@@ -8,6 +8,8 @@ var rightProductImage = document.querySelector('#rightimg');
 var centerProductImage = document.querySelector('#centerimg');
 var groupImageSection = document.getElementById('all-Product');
 var product=[];
+var arrReShow=[];
+
 var totalClicks = 1
 
 function Products(name){
@@ -29,7 +31,7 @@ function choiseRandomImage(){
     rightProductImage.setAttribute('alt' ,rightImageRandom.name);
     centerProductImage.setAttribute('src' , centerImageRandom.urlImg);
     centerProductImage.setAttribute('alt' ,centerImageRandom.name);
-  while((leftImageRandom.name === rightImageRandom.name)||(leftImageRandom.name === centerImageRandom.name)||(centerImageRandom.name === rightImageRandom.name)){
+  while((leftImageRandom.name === rightImageRandom.name)||(leftImageRandom.name === centerImageRandom.name)||(centerImageRandom.name === rightImageRandom.name)|| arrReShow.includes(leftImageRandom) || arrReShow.includes(rightImageRandom) || arrReShow.includes(centerImageRandom)){
     var leftImageRandom = product[randomNumber(0,product.length- 1)]
     var rightImageRandom = product[randomNumber(0,product.length- 1)]
     var centerImageRandom = product[randomNumber(0,product.length- 1)]
@@ -40,6 +42,12 @@ function choiseRandomImage(){
     centerProductImage.setAttribute('src' , centerImageRandom.urlImg);
     centerProductImage.setAttribute('alt' ,centerImageRandom.name);
   }
+  arrReShow=[];
+  arrReShow.push(rightImageRandom);
+  arrReShow.push(centerImageRandom);
+  arrReShow.push(leftImageRandom);
+
+
   leftImageRandom.totalVotes += 1;
   rightImageRandom.totalVotes += 1;
   centerImageRandom.totalVotes += 1;
