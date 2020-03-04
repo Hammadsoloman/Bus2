@@ -50,7 +50,7 @@ for(var i = 0; i<productImages.length;i++ ){
 choiseRandomImage();
 console.log(product);
 function clickImage(e){
-  for (var i = 0 ; i < product.length ; i++){
+  for (var i = 0 ; i <product.length ; i++){
     if (product[i].name === e.target.alt){
       product[i].totalViews += 1;
       setItem()
@@ -79,25 +79,19 @@ function setItem(){
   
 }
 
+ function getItem(){
 
-  var totalViews=JSON.parse(localStorage.getItem('Products'));
+  var totalViews=JSON.parse(localStorage.getItem('product'));
   if(totalViews===null){
-    return;
-    var reAdd=['bag.jpg','banana.jpg','boots.jpg','breakfast.jpg',
-    'bubblegum.jpg','chair.jpg','cthulhu.jpg',
-    'dog-duck.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg',
-    'scissors.jpg','shark.jpg','tauntaun.jpg','unicorn.jpg','usb.gif','water-can.jpg','wine-glass.jpg'
-    ];
-
-    reAdd.forEach(function(name)
+   
+  }else{
+    product = totalViews
   }
+  randomEnd();
+}
 
 
-// function getItem(){
-//   var totalViews = localStorage.getItem('product');
-//   product = JSON.parse(totalViews);
-//   randomEnd();
-// }
+
 
 
 //End the local storage
