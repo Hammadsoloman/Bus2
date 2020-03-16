@@ -10,14 +10,14 @@ var groupImageSection = document.getElementById('all-Product');
 var product=[];
 var totalClicks = 1
 
-function Products(name){
-this.name = name;
-this.urlImg = `img/${this.name}`;
-this.totalViews = 0;
-this.totalVotes = 0 ;
-product.push(this);
+// function Products(name){
+// this.name = name;
+// this.urlImg = `img/${this.name}`;
+// this.totalViews = 0;
+// this.totalVotes = 0 ;
+// product.push(this);
 
-}
+// }
 
 function choiseRandomImage(){
     var leftImageRandom = product[randomNumber(0,product.length - 1)]
